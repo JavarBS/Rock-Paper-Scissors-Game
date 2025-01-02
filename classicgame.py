@@ -7,64 +7,68 @@ print("First to 3 wins!")
 print("Select your move by pressing (R, P or S)")
 print()
 
-player1_score = 0
-player2_score = 0
+player1Score = 0
+player2Score = 0
 
 while True:
-  player1Move = input("Player 1 > ")
-  if player1Move == "R" or player1Move == "P" or player1Move == "S":
-    print("Player 1 Chosses!")
+  print()
+  player1 = input("Player 1 > ")
+  if player1 == "R" or player1 == "P" or player1 == "S":
+    print("Player 1 selected")
+    print()
   else:
-    print("Invalid Move Player 1")
+    print("Invalid selection Player 1")
+    break
+  player2 = input("Player 2 > ")
+  if player2 == "R" or player2 == "P" or player2 == "S":
+    print("Player 2 selected")
+    print()
+  else:
+    print("Invalid selection Player 2")
     break
 
-  player2Move = input("Player 2 > ")
-  if player2Move == "R" or player2Move == "P" or player2Move == "S":
-    print("Player 2 Choses!")
-  else:
-    print("Invalid Move Player 2")
-    break
-    
-#Results of the choices
-  if player1Move == "R":  
-    if player2Move == "R":
-      print("You both picked Rock, draw!")
-    elif player2Move == "S":
-      print("Player 1 smashed Player 2's Scissors into dust with their Rock!")
-      player1_score += 1
-    elif player2Move == "P":
-      print("Player 1's Rock is smothered by Player 2's Paper!")
-      player2_score += 1  
+  if player1 == "R" and player2 == "R":
+      print("It's a tie!")
+      print()
+  elif player1 == "R" and player2 == "P":
+      print("Player 2's Paper covers Rock and wins!")
+      print()
+      player2Score += 1
+  elif player1 == "R" and player2 == "S":
+      print("Player 1's Rock smashes Scissors and wins!")
+      print()
+      player1Score += 1
       
-  elif player1Move == "P":
-    if player2Move == "R":
-      print("Player 2's Rock is smothered by Player 1's Paper!")
-      player1_score += 1
-    elif player2Move == "S":
-      print("Player 1's Paper is cut into pieces by  Player 2's Scissors!")
-      player2_score += 1
-    elif player2Move == "P":
-      print("Two bits of paper flap at each other.  Dissapointing. Draw.")
-
-  elif player1Move == "S":
-    if player2Move == "R":
-      print("Player 2's Rock makes metal-dust out of Player 1's Scissors")
+  elif player1 == "P" and player2 == "R":
+      print("Player 1's Paper covers Rock and wins!")
       print()
-      player2_score += 1
-    elif player2Move == "S":
-      print( "Scissors bounce off each other like a dodgy sword fight! Draw")
+      player1Score += 1
+  elif player1 == "P" and player2 == "P":
+      print("It's a tie!")
       print()
-    elif player2Move == "P":
-      print( "Player 1's Scissors make confetti out of Player 2's paper!")
+  elif player1 == "P" and player2 == "S":
+      print("Player 2's Scissors cuts Paper and wins!")
+      player2Score += 1
+
+  elif player1 == "S" and player2 == "R":
+      print("Player 2's Rock smashes Scissors and wins!")
       print()
-      player1_score += 1
+      player2Score += 1
+  elif player1 == "S" and player2 == "P":
+      print("Player 1's Scissors cuts Paper and wins!")
+      print()
+      player1Score += 1
+  elif player1 == "S" and player2 == "S":
+      print("It's a tie!")
+      print()
 
-#Ending Winner
-  print("Player 1 has", player1_score, "wins.")
-  print("Player 2 has", player2_score, "wins.")
+  print("Player 1 has", player1Score, "wins.")
+  print("Player 2 has", player2Score, "wins.")
 
-  if player1_score == 3 or player2_score == 3:
-    print ( "Thanks for playing!")
+  if player1Score == 3 or player2Score == 3:
+    print("Thanks for playing!")
     exit()
   else:
     continue
+ 
+ 
