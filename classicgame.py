@@ -16,12 +16,14 @@ while True:
     print("Player 1 Chosses!")
   else:
     print("Invalid Move Player 1")
+    break
 
   player2Move = input("Player 2 > ")
   if player2Move == "R" or player2Move == "P" or player2Move == "S":
     print("Player 2 Choses!")
   else:
     print("Invalid Move Player 2")
+    break
     
 #Results of the choices
   if player1Move == "R":  
